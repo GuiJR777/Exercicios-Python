@@ -7,8 +7,9 @@ Após ouvir a frase, um metodo privado chamado "__react" é chamado, que simula 
 Joana tambem possui um metodo publico chamado "mapping_reactions" que mapeia as reações da Joana
 de acordo com as palavras gatilho dita por seus amigos, esse metodo recebe o input no padrão
 imposto no enunciado
-A classe BordelineJoana executa a coleta dos inputs e os passa a Joana.
+O método execute executa a coleta dos inputs e os passa a Joana.
 """
+
 
 class Joana:
     def __init__(self):
@@ -40,23 +41,20 @@ class Joana:
         return " ".join(reactions)
 
 
-class BordelineJoana:
-    def __init__(self):
-        self.__joana = Joana()
+def execute():
+    joana = Joana()
 
-    def execute(self):
-        number_of_triggers_words = int(input())
+    number_of_triggers_words = int(input())
 
-        for trigger_word_and_reaction in range(number_of_triggers_words):
-            self.__joana.mapping_reactions(input())
+    for trigger_word_and_reaction in range(number_of_triggers_words):
+        joana.mapping_reactions(input())
 
-        sentence = input()
+    sentence = input()
 
-        reaction = self.__joana.hear_the_phrase(sentence)
+    reaction = joana.hear_the_phrase(sentence)
 
-        print(reaction)
+    print(reaction)
 
 
 if __name__ == "__main__":
-    bordeline_joana = BordelineJoana()
-    bordeline_joana.execute()
+    execute()
